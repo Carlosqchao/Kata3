@@ -85,10 +85,10 @@ public class MainFrame extends JFrame {
     }
 
     private JFreeBarchartDisplay statisticPanel() {
-        return barchartDisplay;
+        return  new JFreeBarchartDisplay();
     }
 
-    public JFreeBarchartDisplay getBarchartDisplay() {
+    public BarchartDisplay getBarchartDisplay() {
         return barchartDisplay;
     }
 

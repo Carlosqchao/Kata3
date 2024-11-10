@@ -3,7 +3,7 @@ package software.ulpgc.kata3.architecture.model;
 public class CsvPokedexDeserializer implements PokedexDeserializer {
     @Override
     public Pokedex deserialize(String line) {
-        return deserialize(line.split(","));
+        return deserialize(line.split(";"));
     }
 
     private Pokedex deserialize(String[] fields) {
