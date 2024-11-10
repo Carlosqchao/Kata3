@@ -1,7 +1,7 @@
 package software.ulpgc.kata3.apps;
 
-import software.ulpgc.kata3.architecture.control.Command;
 import software.ulpgc.kata3.architecture.view.BarchartDisplay;
+import software.ulpgc.kata3.architecture.control.Command;
 import software.ulpgc.kata3.architecture.view.SelectStatisticDialog;
 
 import javax.swing.*;
@@ -19,8 +19,8 @@ public class MainFrame extends JFrame {
     private JFreeBarchartDisplay barchartDisplay;
     private SelectStatisticDialog selectStatisticDialog;
 
-    public MainFrame() throws HeadlessException{
-        this.setTitle("Kata3");
+    public MainFrame() throws HeadlessException {
+        this.setTitle("Kata 3");
         this.setSize(800,600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -43,8 +43,8 @@ public class MainFrame extends JFrame {
 
     private Component selector() {
         JComboBox<String> comboBox = new JComboBox<>();
-        comboBox.addItem("Generaciones");
-        comboBox.addItem("Numero de habilidades");
+        comboBox.addItem("Generations");
+        comboBox.addItem("Number of abilities");
         comboBox.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -66,33 +66,31 @@ public class MainFrame extends JFrame {
     }
 
     private JButton toggle() {
+
         JButton button = new JButton("toggle");
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     commands.get("toggle").execute();
-                } catch (IOException ex){
-                    throw  new RuntimeException(ex);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });
         return button;
     }
 
-    public Map<String, Command> getCommands() {
-        return commands;
-    }
-
     private JFreeBarchartDisplay statisticPanel() {
-        return  new JFreeBarchartDisplay();
+        return new JFreeBarchartDisplay();
     }
 
-    public BarchartDisplay getBarchartDisplay() {
+
+    public BarchartDisplay barchartDisplay() {
         return barchartDisplay;
     }
 
-    public SelectStatisticDialog getSelectStatisticDialog() {
+    public SelectStatisticDialog selectStatisticDialog() {
         return selectStatisticDialog;
     }
 }

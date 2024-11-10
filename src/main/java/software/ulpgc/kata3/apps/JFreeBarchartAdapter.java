@@ -12,9 +12,8 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-
 public class JFreeBarchartAdapter {
-    public static JFreeChart adapt(Barchart barchart) {
+    public static JFreeChart adapt(Barchart barchart){
         JFreeChart chart = ChartFactory.createBarChart(
                 barchart.getTitle(),
                 barchart.getxAxis(),
@@ -22,18 +21,17 @@ public class JFreeBarchartAdapter {
                 datasetOf(barchart)
         );
         CategoryPlot plot = chart.getCategoryPlot();
-        plot.getRenderer().setSeriesPaint(0, new Color(0, 230, 255));
+        plot.getRenderer().setSeriesPaint(0,new Color(0,230,255));
         return chart;
     }
 
-    private static CategoryDataset datasetOf(Barchart barchart) {
-        SortedMap<String,Integer> sortedMap = new TreeMap<>(barchart.getData());
+    private static CategoryDataset datasetOf(Barchart barchart){
+        SortedMap<String,Integer> sortedData = new TreeMap<>(barchart.getData());
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for (Map.Entry<String,Integer> entry : sortedMap.entrySet()){
+        for (Map.Entry<String,Integer> entry : sortedData.entrySet()){
             dataset.addValue(entry.getValue(), "", entry.getKey());
         }
         return dataset;
     }
-
 }

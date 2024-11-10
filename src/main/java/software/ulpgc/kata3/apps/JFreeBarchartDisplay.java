@@ -4,11 +4,12 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import software.ulpgc.kata3.architecture.model.Barchart;
 import software.ulpgc.kata3.architecture.view.BarchartDisplay;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class JFreeBarchartDisplay extends JPanel implements BarchartDisplay {
-    public JFreeBarchartDisplay() {
+    public JFreeBarchartDisplay(){
         setLayout(new BorderLayout());
     }
 
@@ -18,9 +19,7 @@ public class JFreeBarchartDisplay extends JPanel implements BarchartDisplay {
         add(new ChartPanel(adapt(barchart)));
         revalidate();
     }
-
     private JFreeChart adapt(Barchart barchart){
         return JFreeBarchartAdapter.adapt(barchart);
     }
-
 }
