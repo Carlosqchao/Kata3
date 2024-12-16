@@ -5,17 +5,17 @@ import software.ulpgc.kata3.architecture.view.BarchartDisplay;
 
 import java.io.IOException;
 
-public class ToggleStatisticsCommand implements Command{
+public class ToggleStatisticCommand implements Command{
     private final BarchartDisplay display;
     private final BarchartLoader loader;
     private int i = 0;
 
-    public ToggleStatisticsCommand(BarchartDisplay display, BarchartLoader loader) {
+    public ToggleStatisticCommand(BarchartDisplay display, BarchartLoader loader) {
         this.display = display;
         this.loader = loader;
     }
     @Override
-    public void execute() throws IOException{
-        display.show(loader.load(i++ % 2));
+    public void execute() throws IOException {
+        display.show(loader.load(i++ %2));
     }
 }

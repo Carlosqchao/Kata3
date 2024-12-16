@@ -18,7 +18,7 @@ public class SelectStatisticCommand implements Command{
     }
 
     @Override
-    public void execute() throws IOException{
+    public void execute() throws IOException {
         display.show(loader.load(dialog.getSelection()));
     }
 }

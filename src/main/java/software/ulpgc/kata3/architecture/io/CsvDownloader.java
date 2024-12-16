@@ -10,7 +10,7 @@ import java.nio.file.StandardCopyOption;
 
 import static java.lang.StringTemplate.STR;
 
-public class ResourceDownloader{
+public class CsvDownloader {
 
     public static void download(String resourceUrl, String outputPath) {
         try {
