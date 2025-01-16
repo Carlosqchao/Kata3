@@ -26,6 +26,6 @@ public class Main {
         mainFrame.put("select",new SelectStatisticCommand(mainFrame.selectStatisticDialog(), loader, mainFrame.barchartDisplay()));
         mainFrame.barchartDisplay().show(loader.load(0));
         mainFrame.setVisible(true);
-        mainFrame.setIconImage(new ImageIcon("pokemon.png").getImage());
+        mainFrame.setIconImage(new ImageIcon("pokemon-1536849_1280.png").getImage());
     }
 }

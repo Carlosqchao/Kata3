@@ -1,4 +1,6 @@
-package software.ulpgc.kata3.architecture.model;
+package software.ulpgc.kata3.architecture.io;
+
+import software.ulpgc.kata3.architecture.model.Pokedex;
 
 import java.io.BufferedReader;
 import java.io.File;

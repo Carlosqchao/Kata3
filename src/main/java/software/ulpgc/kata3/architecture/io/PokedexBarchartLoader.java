@@ -1,8 +1,6 @@
 package software.ulpgc.kata3.architecture.io;
 
 import software.ulpgc.kata3.architecture.model.Barchart;
-import software.ulpgc.kata3.architecture.model.CsvPokedexDeserializer;
-import software.ulpgc.kata3.architecture.model.FilePokedexLoader;
 import software.ulpgc.kata3.architecture.model.Pokedex;
 
 import java.io.File;

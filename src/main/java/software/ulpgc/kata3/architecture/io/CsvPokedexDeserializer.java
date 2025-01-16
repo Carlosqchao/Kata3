@@ -1,4 +1,6 @@
-package software.ulpgc.kata3.architecture.model;
+package software.ulpgc.kata3.architecture.io;
+
+import software.ulpgc.kata3.architecture.model.Pokedex;
 
 public class CsvPokedexDeserializer implements PokedexDeserializer {
     @Override

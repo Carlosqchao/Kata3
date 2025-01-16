@@ -1,7 +1,8 @@
 package software.ulpgc.kata3.apps;
 
-import software.ulpgc.kata3.architecture.view.BarchartDisplay;
+
 import software.ulpgc.kata3.architecture.control.Command;
+import software.ulpgc.kata3.architecture.view.BarchartDisplay;
 import software.ulpgc.kata3.architecture.view.SelectStatisticDialog;
 
 import javax.swing.*;
@@ -25,12 +26,11 @@ public class MainFrame extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
-        this.add(BorderLayout.NORTH, toolbar());
+        this.add(BorderLayout.NORTH,toolbar());
         this.add(barchartDisplay = statisticPanel());
         this.commands = new HashMap<>();
     }
-
-    public void put(String name, Command command) {
+    public void put(String name, Command command){
         commands.put(name, command);
     }
 
@@ -49,7 +49,7 @@ public class MainFrame extends JFrame {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() != ItemEvent.SELECTED) return;
-                try {
+                try{
                     commands.get("select").execute();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
@@ -65,13 +65,12 @@ public class MainFrame extends JFrame {
         return comboBox;
     }
 
-    private JButton toggle() {
-
+    private JButton toggle(){
         JButton button = new JButton("toggle");
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
+                try{
                     commands.get("toggle").execute();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
@@ -85,12 +84,10 @@ public class MainFrame extends JFrame {
         return new JFreeBarchartDisplay();
     }
 
-
-    public BarchartDisplay barchartDisplay() {
+    public BarchartDisplay barchartDisplay(){
         return barchartDisplay;
     }
-
-    public SelectStatisticDialog selectStatisticDialog() {
+    public SelectStatisticDialog selectStatisticDialog(){
         return selectStatisticDialog;
     }
 }
